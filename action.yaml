@@ -1,4 +1,4 @@
-name: 'Serverless Action'
+name: 'Tencent Serverless Action'
 description: Github action for serverless framework
 inputs:
   args:
