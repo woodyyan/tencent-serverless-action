@@ -10,5 +10,5 @@ runs:
   args:
     - ${{ inputs.args }}
 branding:
-  icon: 'zap' 
-  color: black
+  icon: 'upload-cloud' 
+  color: blue
