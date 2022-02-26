@@ -1,0 +1,14 @@
+name: 'Serverless Action'
+description: Github action for serverless framework
+inputs:
+  args:
+    description: arguments for sls command
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.args }}
+branding:
+  icon: 'zap' 
+  color: black
