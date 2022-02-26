@@ -1,20 +1,21 @@
-# SuprGames Serveless Github Action
-Serverless Github Action with the following version:
+# Tencent Serveless Github Action (腾讯云云函数Github Action)
+Tencent Serverless Github Action with the following version:
 
 * Node 16
 * Serverless Latest
 
 
-## Usage
-This is how the step looks:
+## Usage（用法）
 
-
+This is how the step looks: (使用方式)
+```
     - name: serverless scf deploy
       uses: woodyyan/tencent-serverless-action@main
       with:
         command: deploy
         args: -v
-And this is a complete example inside a Github Workflow File:
+```
+And this is a complete example inside a Github Workflow File:（完整示例）
 
 ```
 # 当代码推动到 main 分支时，执行当前工作流程
