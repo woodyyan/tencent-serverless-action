@@ -1,8 +1,4 @@
 # Tencent Serveless Github Action (腾讯云云函数Github Action)
-Tencent Serverless Github Action with the following version:
-
-* Node 16
-* Serverless Latest
 
 
 ## Usage（用法）
@@ -11,9 +7,6 @@ This is how the step looks: (使用方式)
 ```
     - name: serverless scf deploy
       uses: woodyyan/tencent-serverless-action@main
-      with:
-        command: deploy
-        args: -v
 ```
 And this is a complete example inside a Github Workflow File:（完整示例）
 
@@ -34,9 +27,6 @@ jobs:
         uses: actions/checkout@v2
       - name: deploy serverless
         uses: woodyyan/tencent-serverless-action@main
-        with:
-            command: deploy
-            args: -v
         env: # 环境变量
           STAGE: dev #您的部署环境
           SERVERLESS_PLATFORM_VENDOR: tencent #serverless 境外默认为 aws，配置为腾讯
