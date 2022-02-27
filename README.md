@@ -38,7 +38,7 @@ jobs:
 
 ```
 
-This is a complete example inside a Github Workflow File for `Java` with Gradle:（完整示例，适用于Gradle的`Java`项目）
+This is a complete example inside a Github Workflow File for `Java` with Gradle:（完整示例，适用于`Java`项目，请仔细看代码中的备注说明）
 
 ```
 name: deploy serverless scf
@@ -61,13 +61,15 @@ jobs:
           distribution: 'temurin'
           server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
           settings-path: ${{ github.workspace }} # location for the settings.xml file
-      - name: Build with Gradle
+      - name: Build with Gradle # Gradle项目用这个
         uses: gradle/gradle-build-action@937999e9cc2425eddc7fd62d1053baf041147db7
         with:
           arguments: build
+      - name: Build with Maven # Maven项目用这个
+        run: mvn -B package --file pom.xml
       - name: create zip folder # 此步骤仅用于Java Web函数，用于存放jar和scf_bootstrap文件。Java事件函数只需要在Serverless.yml中指定Jar目录就好。
         run: mkdir zip
-      - name: move jar and scf_bootstrap to zip folder # 此步骤仅用于Java Web函数，用于移动jar和scf_bootstrap文件。Java事件函数只需要在Serverless.yml中指定Jar目录就好。
+      - name: move jar and scf_bootstrap to zip folder # 此步骤仅用于Java Web函数，用于移动jar和scf_bootstrap文件。Java事件函数只需要在Serverless.yml中指定Jar目录就好。注意如果是Maven编译请修改下面的jar路径为/target。
         run: cp ./build/libs/XXX.jar ./scf_bootstrap ./zip
       - name: deploy serverless
         uses: woodyyan/tencent-serverless-action@main
