@@ -1,9 +1,5 @@
 name: 'Tencent Serverless Action'
 description: Github action for serverless framework
-inputs:
-  args:
-    description: arguments for sls command
-    required: true
 runs:
   using: 'composite'
   steps:
