@@ -3,9 +3,9 @@ description: Github action for serverless framework
 runs:
   using: 'composite'
   steps:
-    - run: npm install -g serverless
+    - run: npm install -g serverless-cloud-framework
       shell: bash
-    - run: sls deploy --debug
+    - run: scf deploy --debug
       shell: bash          
 branding:
   icon: 'upload-cloud' 
