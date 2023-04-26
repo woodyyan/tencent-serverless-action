@@ -6,7 +6,7 @@
 This is how the step looks: (使用方式)
 ```
     - name: serverless scf deploy
-      uses: woodyyan/tencent-serverless-action@main
+      uses: coderwangke/tencent-serverless-action@main
 ```
 
 
